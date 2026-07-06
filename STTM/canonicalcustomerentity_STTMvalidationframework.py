@@ -103,7 +103,7 @@ SOURCES = ['CRM', 'OMS', 'Returns', 'Loyalty', 'Marketplace']
 # Generate synthetic data for each source
 def make_source(name, n, key_field):
     np.random.seed(hash(name) % 1000)
-    base_ids = [f'CUST-{i:08d}' for i in np.random.choice(5000, n, replace=False)]
+    base_ids = [f'CUST-{i:08d}' for i in np.random.choice(8000, n, replace=False)]
     emails   = [f'user{i}@domain.com' for i in np.random.choice(4000, n)]
     return pd.DataFrame({
         key_field:     base_ids,
